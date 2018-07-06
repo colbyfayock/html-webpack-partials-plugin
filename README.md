@@ -29,6 +29,7 @@ plugins: [
 
 ### Settings
 | Name      | Type     | Default | Description
+|:---------:|:--------:|:-------:|:----------|
 | path      | String   | none    | Partial location
 | inject    | Boolean  | true    | Conditionally inject your partial
 | location  | String   | "body"  | HTML tag name where the the partial gets added
