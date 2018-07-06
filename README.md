@@ -1,5 +1,7 @@
 # Partials HTML Webpack Plugin
 
+Add partial template support to [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin)
+
 ## Installation
 
 Not yet published to npm, install via Github for for now:
@@ -25,6 +27,11 @@ plugins: [
     path: './path/to/partials/body.html'
   })
 ]
+```
+
+Set up your partial:
+```
+<div>Hello World!</div>
 ```
 
 ### Settings
