@@ -1,2 +1,2 @@
-# html-webpack-partials-plugin
-Partials for webpack
+# Partials HTML Webpack Plugin
+Partials for Webpack!
