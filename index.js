@@ -61,13 +61,13 @@ function injectPartial(base_html, { options, html, priority, location }) {
   let regex;
   let replacement;
 
-  if ( location === 'head' && priority === 'high' ) {
-    tag = '<meta charset="utf-8">';
-    regex = new RegExp(tag, 'i');
-  } else {
+  // if ( location === 'head' && priority === 'high' ) {
+  //   tag = '<meta charset="utf-8">';
+  //   regex = new RegExp(tag, 'i');
+  // } else {
     tag = targetTag(priority, location);
     regex = new RegExp(tag.replace('/', '\/'), 'i');
-  }
+  // }
 
   if ( priority === 'low' ) {
     replacement = `${html}${tag}`;
