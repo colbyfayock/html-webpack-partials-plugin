@@ -1,8 +1,8 @@
-# Partials HTML Webpack Plugin
+# Partials for HTML Webpack Plugin
 
 [![CircleCI Status](https://circleci.com/gh/colbyfayock/html-webpack-partials-plugin.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/colbyfayock/html-webpack-partials-plugin) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/colbyfayock/html-webpack-partials-plugin/blob/master/LICENSE)
 
-Add partial template support to [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin)
+Extends [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin) to add support for partials or templates.
 
 ## Installation
 
