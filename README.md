@@ -1,5 +1,7 @@
 # Partials HTML Webpack Plugin
 
+[![CircleCI](https://circleci.com/gh/colbyfayock/html-webpack-partials-plugin.svg?style=svg)](https://circleci.com/gh/colbyfayock/html-webpack-partials-plugin)
+
 Add partial template support to [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin)
 
 ## Installation
