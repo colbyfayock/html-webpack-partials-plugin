@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:9.10.0
+    working_directory: ~/html-webpack-partials-plugin
     steps:
       - run: yarn install
       - run: yarn test
