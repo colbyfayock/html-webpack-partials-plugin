@@ -5,14 +5,12 @@
 Extends [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin) to add support for partials or templates.
 
 ## Installation
-
-Not yet published to npm, install via Github for for now:
 ```
-npm add https://github.com/colbyfayock/html-webpack-partials-plugin --save-dev
+yarn add html-webpack-partials-plugin -D
 ```
 or
 ```
-yarn add https://github.com/colbyfayock/html-webpack-partials-plugin -D
+npm add html-webpack-partials-plugin --save-dev
 ```
 
 ## Usage
@@ -144,7 +142,7 @@ See a few other working examples here: https://github.com/colbyfayock/html-webpa
 ## Notes
 
 ### Determining Injection Point
-Given the location and priority passed into the configuration, the plugin determines where to inject. The location is simply the name of the tag to use, where the priority is how high or how low in the tag we inject. For almost all situations, a high priority will inject immediately after the opening tag and low will inject immediately before the closing tag. 
+Given the location and priority passed into the configuration, the plugin determines where to inject. The location is simply the name of the tag to use, where the priority is how high or how low in the tag we inject. For almost all situations, a high priority will inject immediately after the opening tag and low will inject immediately before the closing tag.
 
 The one exception to this, if the passed in tagname is `head` with a `high` priority, the plugin will inject immediately after `<meta charset="utf-8">`.
 
