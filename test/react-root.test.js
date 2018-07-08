@@ -4,18 +4,26 @@ const expect = require('chai').expect;
 const webpack = require('webpack');
 const config = require('../examples/react-root/webpack.config');
 
-it('Adds a static partial containing a div with id of root to the body and compiles a react app', (done) => {
+describe('React Root', function() {
 
-  webpack(config, (error, result) => {
+  // This takes a little extra time to compile, so we need to up the default timeout a bit
 
-    expect(error).to.equal(null);
+  this.timeout(3000);
 
-    const html = result.compilation.assets['index.html'].source();
-    const fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/react-root.html')).toString();
+  it('Adds a static partial containing a div with id of root to the body and compiles a react app', (done) => {
 
-    expect(html).to.equal(fixture);
+    webpack(config, (error, result) => {
 
-    done();
+      expect(error).to.equal(null);
+
+      const html = result.compilation.assets['index.html'].source();
+      const fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/react-root.html')).toString();
+
+      expect(html).to.equal(fixture);
+
+      done();
+
+    });
 
   });
 

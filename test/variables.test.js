@@ -4,18 +4,22 @@ const expect = require('chai').expect;
 const webpack = require('webpack');
 const config = require('../examples/variables/webpack.config');
 
-it('Adds a partial to the body with local variables', (done) => {
+describe('Variables', function() {
 
-  webpack(config, (error, result) => {
+  it('Adds a partial to the body with local variables', (done) => {
 
-    expect(error).to.equal(null);
+    webpack(config, (error, result) => {
 
-    const html = result.compilation.assets['index.html'].source();
-    const fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/variables.html')).toString();
+      expect(error).to.equal(null);
 
-    expect(html).to.equal(fixture);
+      const html = result.compilation.assets['index.html'].source();
+      const fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/variables.html')).toString();
 
-    done();
+      expect(html).to.equal(fixture);
+
+      done();
+
+    });
 
   });
 

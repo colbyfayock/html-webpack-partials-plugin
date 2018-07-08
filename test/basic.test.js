@@ -4,18 +4,22 @@ const expect = require('chai').expect;
 const webpack = require('webpack');
 const config = require('../examples/basic/webpack.config');
 
-it('Adds a static partial to the body', (done) => {
+describe('Basic', function() {
 
-  webpack(config, (error, result) => {
+  it('Adds a static partial to the body', (done) => {
 
-    expect(error).to.equal(null);
+    webpack(config, (error, result) => {
 
-    const html = result.compilation.assets['index.html'].source();
-    const fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/basic.html')).toString();
+      expect(error).to.equal(null);
 
-    expect(html).to.equal(fixture);
+      const html = result.compilation.assets['index.html'].source();
+      const fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/basic.html')).toString();
 
-    done();
+      expect(html).to.equal(fixture);
+
+      done();
+
+    });
 
   });
 
