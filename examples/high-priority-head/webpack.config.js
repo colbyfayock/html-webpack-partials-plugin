@@ -12,13 +12,15 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin(),
-    new HtmlWebpackPartialsPlugin({
-      path: path.join(__dirname, './partials/head.html'),
-      priority: 'high',
-      location: 'head'
-    }),
-    new HtmlWebpackPartialsPlugin({
-      path: path.join(__dirname, './partials/body.html')
-    })
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './partials/head.html'),
+        priority: 'high',
+        location: 'head'
+      },
+      {
+        path: path.join(__dirname, './partials/body.html')
+      }
+    ])
   ]
 };

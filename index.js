@@ -1,15 +1,14 @@
-const fs = require('fs');
-const path = require('path');
-const _template = require('lodash/template');
+const Partial = require('./lib/partial');
+
+/**
+ * HtmlWebpackPartialsPlugin
+ * @description Webpack plugin based on HTML Webpack Plugin that allows partial injection into the compiled HTML
+ */
 
 class HtmlWebpackPartialsPlugin {
 
   constructor(settings = {}) {
-    this.path = settings.path;
-    this.location = settings.location || 'body';
-    this.priority = settings.priority || 'low';
-    this.should_inject = typeof settings.inject === 'undefined' ? true : !!(settings.inject);
-    this.options = Object.assign({}, settings.options);
+    this.settings = settings;
   }
 
   apply(compiler) {
@@ -18,22 +17,36 @@ class HtmlWebpackPartialsPlugin {
 
       compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tapAsync('HtmlWebpackPartialsPlugin', (data, callback) => {
 
-        // User option to conditionally inject snippet to allow for config based
-        // injection management
+        // If the input isn't an array, add it as one to simplify the process
 
-        if ( !this.should_inject ) {
-          callback(null, data);
-          return;
+        if ( !Array.isArray(this.settings) ) {
+          this.settings = [ this.settings ];
         }
 
-        const file = fs.readFileSync(path.resolve(this.path), 'utf8');
-        const template = _template(file);
+        const partial_collection = this.settings.map(partial => {
+          return new Partial(partial);
+        }).filter(partial => {
 
-        data.html = injectPartial(data.html, {
-          options: this.options,
-          html: template(this.options),
-          priority: this.priority,
-          location: this.location,
+          // User option to conditionally inject snippet to allow for config based
+          // injection management
+
+          return partial.should_inject;
+
+        }).forEach(partial => {
+
+          // Once we know we're using the partial, read the file and create a template
+
+          partial.createTemplate();
+
+          // Finally inject the partial into the HTML stream
+
+          data.html = injectPartial(data.html, {
+            options: partial.options,
+            html: partial.template(partial.options),
+            priority: partial.priority,
+            location: partial.location,
+          });
+
         });
 
         callback(null, data);
@@ -51,8 +64,7 @@ module.exports = HtmlWebpackPartialsPlugin;
 
 /**
  * injectPartial
- * @description takes an html string and injects new html string based on the
- *     set priority and tag location
+ * @description takes an html string and injects new html string based on the set priority and tag location
  */
 
 function injectPartial(base_html, { options, html, priority, location }) {

@@ -4,7 +4,7 @@ const expect = require('chai').expect;
 const webpack = require('webpack');
 const config = require('../examples/high-priority-head/webpack.config');
 
-it('Adds a static partial to the body', (done) => {
+it('Adds a partial below meta charset and a partial in the body with an array input', (done) => {
 
   webpack(config, (error, result) => {
 
