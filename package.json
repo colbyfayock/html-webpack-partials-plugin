@@ -1,6 +1,6 @@
 {
   "name": "html-webpack-partials-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Easily add partial support to the HTML Webpack Plugin",
   "keywords": [
     "webpack",
