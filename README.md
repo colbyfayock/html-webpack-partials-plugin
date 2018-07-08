@@ -52,7 +52,7 @@ The settings can either be passed in as a single object or an array of objects.
 
 ### Google Analytics & Google Optimize
 
-The (recommended installation)[https://support.google.com/optimize/answer/6262084?hl=en] of (Google Optimize)[https://www.google.com/analytics/optimize/] alongside Google Analytics includes installing the snippet immediately after the `<meta charset` tag from the initial server-returned HTML. Loading this clientside using something like (React Helmet)[https://github.com/nfl/react-helmet], unless using server side rendering, won't give us the benefits of giving an optimal loading experience when running A/B tests. To fix this, we can inject this snippet using a partial without having to create a custom HTML template file or trying to sloppily manage it in our app.
+The [recommended installation](https://support.google.com/optimize/answer/6262084?hl=en) of [Google Optimize](https://www.google.com/analytics/optimize/) alongside Google Analytics includes installing the snippet immediately after the `<meta charset` tag from the initial server-returned HTML. Loading this clientside using something like [React Helmet](https://github.com/nfl/react-helmet), unless using server side rendering, won't give us the benefits of giving an optimal loading experience when running A/B tests. To fix this, we can inject this snippet using a partial without having to create a custom HTML template file or trying to sloppily manage it in our app.
 
 #### Set Up Your Config
 Using a basic example of `webpack.config.js`:
@@ -82,7 +82,7 @@ module.exports = {
 };
 ```
 #### Set Up your Partial
-Using example code from the (installation guide)[https://support.google.com/optimize/answer/6262084?hl=en], set up `partials/analytics.html`:
+Using example code from the [installation guide](https://support.google.com/optimize/answer/6262084?hl=en), set up `partials/analytics.html`:
 
 ```
 <!-- Page-hiding snippet (recommended)  -->
