@@ -48,6 +48,73 @@ The settings can either be passed in as a single object or an array of objects.
 
 ## Examples
 
+### React App Root
+
+Don't bother creating a custom template just to add a [React](https://reactjs.org/) root element, simply add it as a partial!
+
+#### Set Up Your Config
+Using an example of `webpack.config.js` with Babel installed:
+```
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('../../');
+
+module.exports = {
+  entry: {
+    main: path.join(__dirname, './main.js')
+  },
+  output: {
+    path: path.join(__dirname, './dist'),
+    filename: '[name].js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react'
+            ]
+          }
+        }
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, './partials/body.html')
+    })
+  ]
+};
+```
+
+#### Set Up your Partial
+Add a mounting point for your application at `partials/body.html`:
+
+```
+<div id="root"></div>
+```
+
+### Results
+Now your app has something to render to!
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Webpack App</title>
+  </head>
+  <body>
+  <div id="root"></div><script type="text/javascript" src="main.js"></script></body>
+</html>
+```
+
+
 ### Google Analytics & Google Optimize
 
 The [recommended installation](https://support.google.com/optimize/answer/6262084?hl=en) of [Google Optimize](https://www.google.com/analytics/optimize/) alongside Google Analytics includes installing the snippet immediately after the `<meta charset` tag from the initial server-returned HTML. Loading this clientside using something like [React Helmet](https://github.com/nfl/react-helmet), unless using server side rendering, won't give us the benefits of giving an optimal loading experience when running A/B tests. To fix this, we can inject this snippet using a partial without having to create a custom HTML template file or trying to sloppily manage it in our app.
