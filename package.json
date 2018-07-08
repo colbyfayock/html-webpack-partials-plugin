@@ -1,7 +1,12 @@
 {
   "name": "html-webpack-partials-plugin",
   "version": "0.1.0",
-  "description": "Partials support for the HTML Webpack Plugin",
+  "description": "Easily add partial support to the HTML Webpack Plugin",
+  "keywords": [
+    "webpack",
+    "partial",
+    "template"
+  ],
   "main": "index.js",
   "repository": "git@github.com:colbyfayock/html-webpack-partials-plugin.git",
   "author": "Colby Fayock <hello@colbyfayock.com>",
