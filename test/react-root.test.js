@@ -8,7 +8,7 @@ describe('React Root', function() {
 
   // This takes a little extra time to compile, so we need to up the default timeout a bit
 
-  this.timeout(3000);
+  this.timeout(4000);
 
   it('Adds a static partial containing a div with id of root to the body and compiles a react app', (done) => {
 
