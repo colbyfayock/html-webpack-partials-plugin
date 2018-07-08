@@ -138,6 +138,9 @@ ga('send', 'pageview');
 </html>
 ```
 
+### Other Examples
+See a few other working examples here: https://github.com/colbyfayock/html-webpack-partials-plugin/tree/master/examples
+
 ## Notes
 
 ### Determining Injection Point
