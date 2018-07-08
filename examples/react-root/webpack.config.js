@@ -1,0 +1,36 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('../../');
+
+module.exports = {
+  entry: {
+    main: path.join(__dirname, './main.js')
+  },
+  output: {
+    path: path.join(__dirname, './dist'),
+    filename: '[name].js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react'
+            ]
+          }
+        }
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, './partials/body.html')
+    })
+  ]
+};
