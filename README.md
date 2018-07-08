@@ -100,8 +100,8 @@ Add a mounting point for your application at `partials/body.html`:
 <div id="root"></div>
 ```
 
-### Results
-Now your app has something to render to!
+#### Results
+💪Now your app has something to render to!
 ```
 <!DOCTYPE html>
 <html>
@@ -171,7 +171,7 @@ ga('send', 'pageview');
 </script>
 ```
 
-### Results
+#### Results
 🙆 now you're analytics code can be easily maintained and installed in the right spot!
 ```
 <!DOCTYPE html>
