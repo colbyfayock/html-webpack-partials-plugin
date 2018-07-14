@@ -28,9 +28,11 @@ class HtmlWebpackPartialsPlugin {
         }).filter(partial => {
 
           // User option to conditionally inject snippet to allow for config based
-          // injection management
+          // injection management. Additionally check to see if the partial template
+          // filename matches the current HTML Webpack Plugin instance. This defaults
+          // to index.html if not set
 
-          return partial.should_inject;
+          return partial.should_inject && partial.template_filename === data.plugin.options.filename;
 
         }).forEach(partial => {
 
