@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const Partial = require('./lib/partial');
 const Util = require('./lib/util');
 
@@ -16,7 +18,7 @@ class HtmlWebpackPartialsPlugin {
 
     compiler.hooks.compilation.tap('HtmlWebpackPartialsPlugin', compilation => {
 
-      compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tapAsync('HtmlWebpackPartialsPlugin', (data, callback) => {
+      HtmlWebpackPlugin.getHooks(compilation).afterTemplateExecution.tapAsync('HtmlWebpackPartialsPlugin', (data, callback) => {
 
         // If the input isn't an array, add it as one to simplify the process
 
