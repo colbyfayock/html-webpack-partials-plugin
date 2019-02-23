@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "fs": "^0.0.1-security",
+    "html-webpack-plugin": "^4.0.0-beta.5",
     "lodash": "^4.17.11",
     "path": "^0.12.7"
   },
@@ -29,7 +30,6 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
     "chai": "^4.2.0",
-    "html-webpack-plugin": "^4.0.0-beta.2",
     "mocha": "^5.2.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
