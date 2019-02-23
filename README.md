@@ -4,6 +4,9 @@
 
 Extends [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin) to add support for partials or templates.
 
+## Requirements
+Relies on `html-webpack-plugin` 4+ (currently at beta)
+
 ## Installation
 ```
 yarn add html-webpack-partials-plugin -D
