@@ -2,7 +2,7 @@
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
-gtag('config', 'UA-28076707-7');</script><title>Webpack App</title><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><h1>Hello world!</h1><h2>webpack.config.js</h2><pre>
+gtag('config', 'UA-28076707-7');</script><title>Webpack App</title><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><h1>Hello world!</h1><hr><h2>webpack.config.js</h2><pre>
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPartialsPlugin = require('../../');
@@ -33,4 +33,19 @@ module.exports = {
     ])
   ]
 };
+</pre><h2>main.js</h2><pre>
+console.log('Test!');
+</pre><h2>partials/body.html</h2><pre>
+&#x3C;h1&#x3E;Hello world!&#x3C;/h1&#x3E;
+...and the rest of this configuration example
+</pre><h2>partials/head.html</h2><pre>
+&#x3C;!-- Global site tag (gtag.js) - Google Analytics --&#x3E;
+&#x3C;script async src=&#x22;https://www.googletagmanager.com/gtag/js?id=&#x3C;%= ga_property_id %&#x3E;&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;script&#x3E;
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag(&#x27;js&#x27;, new Date());
+
+gtag(&#x27;config&#x27;, &#x27;&#x3C;%= ga_property_id %&#x3E;&#x27;);
+&#x3C;/script&#x3E;
 </pre><script src="main.js"></script></body></html>

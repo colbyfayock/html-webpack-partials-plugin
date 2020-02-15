@@ -1,1 +1,86 @@
 <h1>Hello, Home!</h1>
+
+<a href="about.html">About Page</a>
+
+<hr />
+
+<h2>webpack.config.js</h2>
+<pre>
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('../../');
+
+module.exports = {
+  entry: {
+    main: path.join(__dirname, './main.js')
+  },
+  output: {
+    path: path.join(__dirname, './dist'),
+    filename: '[name].js'
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, './wrapper.html')
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about.html',
+      template: path.join(__dirname, './wrapper.html')
+    }),
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, './partials/nav.html'),
+        template_filename: '*'
+      },
+      {
+        path: path.join(__dirname, './pages/home.html')
+      },
+      {
+        path: path.join(__dirname, './pages/about.html'),
+        template_filename: 'about.html'
+      },
+      {
+        path: path.join(__dirname, './partials/footer.html'),
+        template_filename: '*'
+      },
+    ])
+  ]
+};
+</pre>
+
+<h2>main.js</h2>
+<pre>
+console.log('Test!');
+</pre>
+
+<h2>wrapper.html</h2>
+<pre>
+&#x3C;!DOCTYPE html&#x3E;
+&#x3C;html&#x3E;
+&#x3C;head&#x3E;&#x3C;/head&#x3E;
+&#x3C;body&#x3E;
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;
+</pre>
+
+<h2>pages/about.html</h2>
+<pre>
+&#x3C;h1&#x3E;Hello, about!&#x3C;/h1&#x3E;
+</pre>
+
+<h2>pages/home.html</h2>
+<pre>
+&#x3C;h1&#x3E;Hello, Home!&#x3C;/h1&#x3E;
+
+&#x3C;a href=&#x22;about.html&#x22;&#x3E;About Page&#x3C;/a&#x3E;
+...and the rest of this configuration example
+</pre>
+
+<h2>partials/footer.html</h2>
+<pre>
+&#x3C;footer&#x3E;Footer&#x3C;/footer&#x3E;
+</pre>
+
+<h2>partials/nav.html</h2>
+<pre>
+&#x3C;nav&#x3E;Nav&#x3C;/nav&#x3E;
+</pre>

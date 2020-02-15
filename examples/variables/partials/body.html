@@ -1,11 +1,13 @@
 <h1><%= header %></h1>
 <p><%= copy %></p>
 
+<hr />
+
 <h2>webpack.config.js</h2>
 <pre>
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
+const HtmlWebpackPartialsPlugin = require('../../');
 
 module.exports = {
   entry: {
@@ -26,4 +28,16 @@ module.exports = {
     })
   ]
 };
+</pre>
+
+<h2>main.js</h2>
+<pre>
+console.log('Test!');
+</pre>
+
+<h2>partials/body.html</h2>
+<pre>
+&#x3C;h1&#x3E;&#x3C;%= header %&#x3E;&#x3C;/h1&#x3E;
+&#x3C;p&#x3E;&#x3C;%= copy %&#x3E;&#x3C;/p&#x3E;
+...and the rest of this configuration example
 </pre>
