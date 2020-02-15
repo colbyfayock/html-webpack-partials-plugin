@@ -1,6 +1,6 @@
 {
   "name": "html-webpack-partials-plugin",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Easily add partial support to the HTML Webpack Plugin",
   "keywords": [
     "webpack",
@@ -25,12 +25,16 @@
     "lodash": "^4.17.15",
     "path": "^0.12.7"
   },
+  "peerDependencies": {
+    "html-webpack-plugin": "^4.0.0-beta.11"
+  },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
     "chai": "^4.2.0",
+    "html-webpack-plugin": "^4.0.0-beta.11",
     "husky": "^4.2.3",
     "mocha": "^7.0.1",
     "react": "^16.12.0",
