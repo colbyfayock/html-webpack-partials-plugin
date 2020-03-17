@@ -35,7 +35,12 @@ class HtmlWebpackPartialsPlugin {
           // filename matches the current HTML Webpack Plugin instance. This defaults
           // to index.html if not set
 
-          return partial.should_inject && ( partial.template_filename === data.plugin.options.filename || partial.template_filename === '*' );
+          return partial.should_inject && (
+            partial.template_filename === data.plugin.options.filename || 
+            Array.isArray(partial.template_filename)
+              ? partial.template_filename.includes(data.plugin.options.filename)
+              : partial.template_filename === '*'
+          );
 
         }).forEach(partial => {
 

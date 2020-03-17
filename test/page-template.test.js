@@ -19,7 +19,7 @@ describe('Page Template', function() {
 
       const about_html = result.compilation.assets['about.html'].source();
       const about_fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/page-template-about.html')).toString();
-
+      
       expect(about_html).to.equal(about_fixture);
 
       done();
