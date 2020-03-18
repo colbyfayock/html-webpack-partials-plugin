@@ -16,7 +16,8 @@
   "author": "Colby Fayock <hello@colbyfayock.com>",
   "license": "MIT",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "bump": "npm version"
   },
   "precommit": "yarn test",
   "dependencies": {
