@@ -22,12 +22,11 @@
   "precommit": "yarn test",
   "dependencies": {
     "fs": "^0.0.1-security",
-    "html-webpack-plugin": "^4.0.0-beta.11",
     "lodash": "^4.17.15",
     "path": "^0.12.7"
   },
   "peerDependencies": {
-    "html-webpack-plugin": "^4.0.0-beta.11"
+    "html-webpack-plugin": ">=4.0.0-beta.11"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
