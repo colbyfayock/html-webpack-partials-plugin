@@ -208,7 +208,9 @@ ga('send', 'pageview');
 ```
 
 ### Other Examples
-See a few other working examples here: https://github.com/colbyfayock/html-webpack-partials-plugin/tree/master/examples
+See a few other working examples here: https://html-webpack-partials-plugin.netlify.app/
+
+See the source for the examples here: https://github.com/colbyfayock/html-webpack-partials-plugin/tree/master/examples
 
 ## Notes
 
