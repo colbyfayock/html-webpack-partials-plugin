@@ -22,6 +22,15 @@
       "profile": "https://twitter.com/avivshafir",
       "contributions": [
         "code"
+    },
+    {
+      "login": "superelement",
+      "name": "Jim Doyle",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1377237?v=4",
+      "profile": "http://www.jimdoyle.com.au",
+      "contributions": [
+        "code",
+        "test"
       ]
     }
   ],
