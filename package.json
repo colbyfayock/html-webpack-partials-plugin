@@ -22,24 +22,24 @@
   "precommit": "yarn test",
   "dependencies": {
     "fs": "^0.0.1-security",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.20",
     "path": "^0.12.7"
   },
   "peerDependencies": {
-    "html-webpack-plugin": ">=4.0.0-beta.11"
+    "html-webpack-plugin": ">=4.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.7",
-    "@babel/preset-env": "^7.8.7",
-    "@babel/preset-react": "^7.8.3",
-    "babel-loader": "^8.0.6",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
     "chai": "^4.2.0",
-    "html-webpack-plugin": "^4.0.0-beta.11",
-    "husky": "^4.2.3",
-    "mocha": "^7.1.0",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11"
+    "html-webpack-plugin": "^4.3.0",
+    "husky": "^4.2.5",
+    "mocha": "^8.1.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }
