@@ -14,6 +14,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "avivshafir",
+      "name": "Aviv Shafir",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6135443?v=4",
+      "profile": "https://twitter.com/avivshafir",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
