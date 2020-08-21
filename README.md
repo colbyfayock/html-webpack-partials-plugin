@@ -1,6 +1,6 @@
 # Partials for HTML Webpack Plugin
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![CircleCI Status](https://circleci.com/gh/colbyfayock/html-webpack-partials-plugin.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/colbyfayock/html-webpack-partials-plugin) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/colbyfayock/html-webpack-partials-plugin/blob/master/LICENSE)
@@ -235,6 +235,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://colbyfayock.com/newsletter"><img src="https://avatars2.githubusercontent.com/u/1045274?v=4" width="100px;" alt=""/><br /><sub><b>Colby Fayock</b></sub></a><br /><a href="https://github.com/colbyfayock/html-webpack-partials-plugin/commits?author=colbyfayock" title="Code">💻</a> <a href="https://github.com/colbyfayock/html-webpack-partials-plugin/commits?author=colbyfayock" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://www.jimdoyle.com.au"><img src="https://avatars3.githubusercontent.com/u/1377237?v=4" width="100px;" alt=""/><br /><sub><b>Jim Doyle</b></sub></a><br /><a href="https://github.com/colbyfayock/html-webpack-partials-plugin/commits?author=superelement" title="Code">💻</a> <a href="https://github.com/colbyfayock/html-webpack-partials-plugin/commits?author=superelement" title="Tests">⚠️</a></td>
   </tr>
 </table>
 
