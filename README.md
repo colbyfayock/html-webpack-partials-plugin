@@ -10,6 +10,9 @@ Extends [HTML Webpack Plugin](https://github.com/jantimon/html-webpack-plugin) t
 ## Requirements
 Relies on `html-webpack-plugin` 4+ (currently at beta)
 
+
+test
+
 ## Installation
 ```
 yarn add html-webpack-partials-plugin -D
