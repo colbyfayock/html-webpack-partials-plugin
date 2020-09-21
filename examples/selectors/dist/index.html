@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Webpack App</title><meta name="viewport" content="width=device-width,initial-scale=1"></head><body>Let's see if paritial's text gets inserted here:<div id="target-me" style="min-height: 10px;
+        min-width: 10px;
+        border: 5px solid red;
+        margin: 1rem;
+        padding: 1rem;">If I show up in the index.html, then you are really upto something interesting 😉</div><hr>targeting using same selector multiple times:<div class="target-me-too" style="min-height: 10px;
+        min-width: 10px;
+        border: 5px solid blue;
+        margin: 1rem;
+        padding: 1rem;">If I show up in the index.html, then you are really upto something interesting 😉</div><div class="target-me-too" style="min-height: 10px;
+        min-width: 10px;
+        border: 5px solid green;
+        margin: 1rem;
+        padding: 1rem;">If I show up in the index.html, then you are really upto something interesting 😉</div><section class="low-priority" style="min-height: 10px;
+        min-width: 10px;
+        border: 5px solid yellow;
+        margin: 1rem;
+        padding: 1rem;"><p>the lower priority partial should appear after this sibling paragraph:</p>If I show up in the index.html, then you are really upto something interesting 😉</section><script src="main.js"></script></body></html>

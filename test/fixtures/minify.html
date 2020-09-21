@@ -1,5 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Webpack App</title><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><style>body{background-color:purple}</style><h1>Hello world!</h1><div>Test</div><script>console.log("test"),console.log("one"),console.log("two"),console.log("three")</script><hr><h2>webpack.config.js</h2><pre>
-const path = require('path');
+<!doctype html><html><head><meta charset="utf-8"><title>Webpack App</title><meta name="viewport" content="width=device-width,initial-scale=1"></head><body><style>body{background-color:purple}</style><h1>Hello world!</h1><div>Test</div><script>console.log("test"),console.log("one"),console.log("two"),console.log("three")</script><hr><h2>webpack.config.js</h2><pre>const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPartialsPlugin = require('../../');
 
@@ -34,26 +33,24 @@ module.exports = {
     })
   ]
 };
-</pre><h2>main.js</h2><pre>
-console.log('Test!');
-</pre><h2>partials/body.html</h2><pre>
-&#x3C;style&#x3E;
+</pre><h2>main.js</h2><pre>console.log('Test!');
+</pre><h2>partials/body.html</h2><pre>&lt;style&gt;
 body {
   background-color: purple;
 }
-&#x3C;/style&#x3E;
+&lt;/style&gt;
 
-&#x3C;h1&#x3E;Hello world!&#x3C;/h1&#x3E;
+&lt;h1&gt;Hello world!&lt;/h1&gt;
 
-&#x3C;div&#x3E;
+&lt;div&gt;
   Test
-&#x3C;/div&#x3E;
+&lt;/div&gt;
 
-&#x3C;script&#x3E;
-console.log(&#x27;test&#x27;);
-console.log(&#x27;one&#x27;);
-console.log(&#x27;two&#x27;);
-console.log(&#x27;three&#x27;);
-&#x3C;/script&#x3E;
+&lt;script&gt;
+console.log('test');
+console.log('one');
+console.log('two');
+console.log('three');
+&lt;/script&gt;
 ...and the rest of this configuration example
 </pre><script src="main.js"></script></body></html>
