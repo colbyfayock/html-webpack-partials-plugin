@@ -48,7 +48,7 @@ Set up your partial:
 | inject    | Boolean  | true    | Conditionally inject your partial
 | location  | String   | "body"  | HTML tag name where the the partial gets added
 | priority  | String   | "low"   | "high" or "low" - determines if the partial gets added from the start of the location or end
-| template_filename | String/String[] | "index.html" | The filename of the HTML Webpack Plugin template that the partial should be attributed to. By default this is `index.html`, the HTML Webpack Plugin default output. Additionally, passing `*` will apply the partial to all templates in the compilation. This doesn't currently work in a regex format, thus something like `*.html` will NOT work and the only functionality `*` will provide is to match all templates. You can also pass an array of strings.
+| template_filename | String/String[] | "index.html" | The filename of the HTML Webpack Plugin template that the partial should be attributed to. By default this is `index.html`, and if the `index.html` is not present, then the HTML Webpack Plugin default output will be used. Additionally, passing `*` will apply the partial to all templates in the compilation. This doesn't currently work in a regex format, thus something like `*.html` will NOT work and the only functionality `*` will provide is to match all templates. You can also pass an array of strings.
 | options   | Object   | {}      | Local variables to the given partial
 
 The settings can either be passed in as a single object or an array of objects.
