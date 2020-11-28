@@ -36,28 +36,13 @@ class HtmlWebpackPartialsPlugin {
           // to index.html if not set
 
           return partial.should_inject && (
-            partial.template_filename === data.plugin.options.filename || 
+            partial.template_filename === data.plugin.options.filename ||
             Array.isArray(partial.template_filename)
               ? partial.template_filename.includes(data.plugin.options.filename)
               : partial.template_filename === '*'
           );
 
-        }).forEach(partial => {
-
-          // Once we know we're using the partial, read the file and create a template
-
-          partial.createTemplate();
-
-          // Finally inject the partial into the HTML stream
-
-          data.html = Util.injectPartial(data.html, {
-            options: partial.options,
-            html: partial.template(partial.options),
-            priority: partial.priority,
-            location: partial.location,
-          });
-
-        });
+        }).forEach(partial => this.buildTemplate(partial, data));
 
         callback(null, data);
 
@@ -65,6 +50,42 @@ class HtmlWebpackPartialsPlugin {
 
     });
 
+  }
+
+
+  /*
+   * Build template from Partial object and data.html, returning new html.
+   */
+  buildTemplate(partial, data){
+    // Once we know we're using the partial, read the file and create a template
+
+    partial.createTemplate();
+
+    // Get partial HTML
+    let partial_html = partial.template(partial.options);
+
+    // Iterate through subpartials and build into partial_html
+    if(partial.options["subPartials"] != null && Array.isArray(partial.options["subPartials"])){
+
+      partial.options["subPartials"].map(subpartial => {
+        return new Partial(subpartial);
+      }).forEach(subpartial => {
+        partial_html = this.buildTemplate(subpartial, {html: partial_html});
+      });
+
+    }
+
+
+    // Finally inject the partial into the HTML stream
+
+    data.html = Util.injectPartial(data.html, {
+      options: partial.options,
+      html: partial_html,
+      priority: partial.priority,
+      location: partial.location,
+    });
+
+    return data.html;
   }
 
 }
