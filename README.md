@@ -58,7 +58,7 @@ The settings can either be passed in as a single object or an array of objects.
 | Name      | Type     | Default | Description
 |:---------:|:--------:|:-------:|:----------|
 | replaceElement | Boolean | false | Replaces "location" HTML tag with the partial instead of making the partial a child element
-| ANY_VARIABLE
+| ANY_VARIABLE | Any   | none    | Variables to be passed to the given partial
 
 
 ## Examples
