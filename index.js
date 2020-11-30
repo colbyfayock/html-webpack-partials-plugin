@@ -53,7 +53,7 @@ class HtmlWebpackPartialsPlugin {
   }
 
 
-  /*
+  /**
    * Build template from Partial object and data.html, returning new html.
    */
   buildTemplate(partial, data){
@@ -64,13 +64,13 @@ class HtmlWebpackPartialsPlugin {
     // Get partial HTML
     let partial_html = partial.template(partial.options);
 
-    // Iterate through subpartials and build into partial_html
-    if(partial.options["subPartials"] != null && Array.isArray(partial.options["subPartials"])){
+    // Iterate through sub-partials and build into partial_html
+    if(partial.options.subPartials != null && Array.isArray(partial.options.subPartials)){
 
-      partial.options["subPartials"].map(subpartial => {
+      partial.options.subPartials.map(subpartial => {
         return new Partial(subpartial);
       }).forEach(subpartial => {
-        partial_html = this.buildTemplate(subpartial, {html: partial_html});
+        partial_html = this.buildTemplate(subpartial, { html: partial_html });
       });
 
     }
