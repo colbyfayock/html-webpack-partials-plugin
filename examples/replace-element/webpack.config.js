@@ -19,9 +19,7 @@ module.exports = {
       path: path.join(__dirname, './partials/body.html'),
       location: "replace-me",
       template_filename: "index.html",
-      options: {
-        replaceElement: true,
-      }
+      priority: "replace",
     })
   ]
 };
