@@ -60,6 +60,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "vincenttaglia",
+      "name": "Victor Vincent Taglia",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/15239196?v=4",
+      "profile": "https://github.com/vincenttaglia",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
