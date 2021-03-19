@@ -1,7 +1,8 @@
-import { Plugin } from 'webpack';
+import { Compiler, Plugin } from 'webpack';
 
 declare class HtmlWebpackPartialsPlugin extends Plugin {
     constructor(settings: HtmlWebpackPartialsPlugin.Settings | HtmlWebpackPartialsPlugin.Settings[]);
+    apply(compiler: Compiler): void;
 }
 
 declare namespace HtmlWebpackPartialsPlugin {
