@@ -1,3 +1,4 @@
+const { Console } = require('console');
 const fs = require('fs');
 const path = require('path');
 const expect = require('chai').expect;
@@ -12,7 +13,7 @@ describe('Analytics', function() {
 
       expect(error).to.equal(null);
 
-      const html = result.compilation.assets['index.html'].source();
+      const html = fs.readFileSync(path.resolve(__dirname, '../examples/analytics/dist/index.html')).toString();
       const fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/analytics.html')).toString();
 
       expect(html).to.equal(fixture);
