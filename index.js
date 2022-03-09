@@ -37,6 +37,7 @@ class HtmlWebpackPartialsPlugin {
 			template: partial.path,
 			inject: false,
 			filename: partial.unique_name,
+			templateParameters: partial.options
 		}).apply(compiler);
 	});
 
