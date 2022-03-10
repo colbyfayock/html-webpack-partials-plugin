@@ -12,7 +12,7 @@ describe('High Priority Head', function() {
 
       expect(error).to.equal(null);
 
-      const html = result.compilation.assets['index.html'].source();
+      const html = fs.readFileSync(path.resolve(__dirname, '../examples/high-priority-head/dist/index.html')).toString();
       const fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/high-priority-head.html')).toString();
 
       expect(html).to.equal(fixture);
