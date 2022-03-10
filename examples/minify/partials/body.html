@@ -34,27 +34,24 @@ module.exports = {
     filename: '[name].js'
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      minify: {
-
-        // Begin HTML Webpack Plugin Default
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true,
-        // End HTML Webpack Plugin Default
-
-        minifyJS: true,
-        minifyCSS: true,
-
-      },
-    }),
+    new HtmlWebpackPlugin(),
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, './partials/body.html')
     })
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.(html)$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            minimize: true
+          },
+        }
+      }
+    ]
+  }
 };
 </pre>
 
