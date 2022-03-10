@@ -12,12 +12,14 @@ describe('Page Template', function() {
 
       expect(error).to.equal(null);
 
-      const index_html = result.compilation.assets['index.html'].source();
+      //const index_html = result.compilation.assets['index.html'].source();
+      const index_html = fs.readFileSync(path.resolve(__dirname, '../examples/page-template/dist/index.html')).toString();
       const index_fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/page-template-index.html')).toString();
 
       expect(index_html).to.equal(index_fixture);
 
-      const about_html = result.compilation.assets['about.html'].source();
+      //const about_html = result.compilation.assets['about.html'].source();
+      const about_html = fs.readFileSync(path.resolve(__dirname, '../examples/page-template/dist/about.html')).toString();
       const about_fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/page-template-about.html')).toString();
       
       expect(about_html).to.equal(about_fixture);
