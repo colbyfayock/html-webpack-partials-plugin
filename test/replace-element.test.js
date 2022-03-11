@@ -12,7 +12,6 @@ describe('Replace Element', function() {
 
             expect(error).to.equal(null);
 
-            //const html = result.compilation.assets['index.html'].source();
             const html = fs.readFileSync(path.resolve(__dirname, '../examples/replace-element/dist/index.html')).toString();
             const fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/replace-element.html')).toString();
 
