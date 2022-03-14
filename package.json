@@ -16,7 +16,7 @@
 	"author": "Colby Fayock <hello@colbyfayock.com>",
 	"license": "MIT",
 	"scripts": {
-		"test": "clear && mocha -g \"Minify\" --timeout 10000",
+		"test": "mocha --timeout 5000",
 		"bump": "npm version"
 	},
 	"precommit": "yarn test",
