@@ -9,7 +9,7 @@ const Util = require('./lib/util');
  */
 
 class HtmlWebpackPartialsPlugin {
-	static filesProcessed = [];
+	filesProcessed = [];
 
   constructor(settings = {}) {
     this.settings = settings;
@@ -45,7 +45,7 @@ class HtmlWebpackPartialsPlugin {
 
 	compiler.hooks.compilation.tap('HtmlWebpackPartialsPlugin', compilation => {
 		HtmlWebpackPlugin.getHooks(compilation).beforeEmit.tapAsync('HtmlWebpackPartialsPlugin', (data, cb) => {
-			!HtmlWebpackPartialsPlugin.filesProcessed.includes(data.outputName) ? HtmlWebpackPartialsPlugin.filesProcessed.push(data.outputName) : '';
+			!this.filesProcessed.includes(data.outputName) ? this.filesProcessed.push(data.outputName) : '';
 			cb(null, data);
 		});
 	});
@@ -65,7 +65,7 @@ class HtmlWebpackPartialsPlugin {
 					let filesProcessed = partial.template_filename;
 					if(!Array.isArray(partial.template_filename)){
 						if(filesProcessed == '*'){
-							filesProcessed = HtmlWebpackPartialsPlugin.filesProcessed.filter(f => f != partial.unique_name);
+							filesProcessed = this.filesProcessed.filter(f => f != partial.unique_name);
 						}else{
 							filesProcessed = [partial.template_filename];
 						}
