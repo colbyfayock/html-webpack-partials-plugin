@@ -1,4 +1,3 @@
-const { Console } = require('console');
 const fs = require('fs');
 const path = require('path');
 const expect = require('chai').expect;
@@ -6,6 +5,9 @@ const webpack = require('webpack');
 const config = require('../examples/analytics/webpack.config');
 
 describe('Analytics', function() {
+
+	// This takes a little extra time to compile, so we need to up the default timeout a bit
+	this.timeout(5000);
 
   it('Adds a static partial to the body and analytics to the head with property ID variable', (done) => {
 
