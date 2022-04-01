@@ -16,7 +16,7 @@
 	"author": "Colby Fayock <hello@colbyfayock.com>",
 	"license": "MIT",
 	"scripts": {
-		"test": "mocha --timeout 5000",
+		"test": "mocha",
 		"bump": "npm version"
 	},
 	"precommit": "yarn test",
