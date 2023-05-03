@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Uses Node.js 10
+    - name: Uses Node.js 12.13.0
       uses: actions/setup-node@v1
       with:
-        node-version: 10
+        node-version: 12.13.0
     - run: npm install -g yarn
     - run: yarn install
     - run: yarn test

@@ -8,11 +8,12 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, './dist'),
-    filename: '[name].js'
+    filename: '[name].js',
+    assetModuleFilename: 'images/[name][ext]',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      // template: path.join(__dirname, './wrapper.html')
+      template: path.join(__dirname, './wrapper.html')
     }),
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, './partials/body.html')
@@ -25,22 +26,17 @@ module.exports = {
         use: {
           loader: 'html-loader',
           options: {
-            attrs: ['img:src', ':srcset'],
-            interpolate: require,
-            minimize: true
-          },
-        }
-      },
-      {
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]'
+            sources: {
+              list: [
+                {
+                  tag: 'img',
+                  attribute: 'src',
+                  type: 'src',
+                }
+              ]
             }
           }
-        ]
+        }
       }
     ]
   }

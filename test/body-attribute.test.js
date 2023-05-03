@@ -12,7 +12,7 @@ describe('Body Attribute', function() {
 
       expect(error).to.equal(null);
 
-      const html = result.compilation.assets['index.html'].source();
+      const html = fs.readFileSync(path.resolve(__dirname, '../examples/body-attribute/dist/index.html')).toString();
       const fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/body-attribute.html')).toString();
 
       expect(html).to.equal(fixture);

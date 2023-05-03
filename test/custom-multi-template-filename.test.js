@@ -12,11 +12,11 @@ describe('Custom Multi template_filename', function() {
 
       expect(error).to.equal(null);
 
-      const index_html = result.compilation.assets['index.html'].source();
+      const index_html = fs.readFileSync(path.resolve(__dirname, '../examples/custom-multi-template-filename/dist/index.html')).toString();
       const index_fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/custom-multi-template-filename-index.html')).toString();
       expect(index_html).to.equal(index_fixture);
 
-      const other_html = result.compilation.assets['other-page.html'].source();
+      const other_html = fs.readFileSync(path.resolve(__dirname, '../examples/custom-multi-template-filename/dist/other-page.html')).toString();
       const other_fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/custom-multi-template-filename-other.html')).toString();
 
       expect(other_html).to.equal(other_fixture);

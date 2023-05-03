@@ -6,13 +6,16 @@ const config = require('../examples/analytics/webpack.config');
 
 describe('Analytics', function() {
 
+	// This takes a little extra time to compile, so we need to up the default timeout a bit
+	this.timeout(5000);
+
   it('Adds a static partial to the body and analytics to the head with property ID variable', (done) => {
 
     webpack(config, (error, result) => {
 
       expect(error).to.equal(null);
 
-      const html = result.compilation.assets['index.html'].source();
+      const html = fs.readFileSync(path.resolve(__dirname, '../examples/analytics/dist/index.html')).toString();
       const fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/analytics.html')).toString();
 
       expect(html).to.equal(fixture);

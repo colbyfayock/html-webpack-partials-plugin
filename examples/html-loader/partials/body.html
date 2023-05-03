@@ -1,13 +1,14 @@
-<h1>Hello world!</h1>
-
-<h2>webpack.config.js</h2>
+<h2>Image in partial</h2>
 
 <img src="../images/webpack.png" />
 
+<hr />
+
+<h2>webpack.config.js</h2>
 <pre>
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
+const HtmlWebpackPartialsPlugin = require('../../');
 
 module.exports = {
   entry: {
@@ -15,13 +16,81 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, './dist'),
-    filename: '[name].js'
+    filename: '[name].js',
+    assetModuleFilename: 'images/[name][ext]',
   },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, './wrapper.html')
+    }),
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, './partials/body.html')
     })
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.(html)$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            sources: {
+              list: [
+                {
+                  tag: 'img',
+                  attribute: 'src',
+                  type: 'src',
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
 };
+</pre>
+
+<h2>main.js</h2>
+<pre>
+console.log('Test!');
+</pre>
+
+<h2>wrapper.html</h2>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;/head&gt;
+&lt;style&gt;
+  img{
+    max-width: 320px;
+    height: auto;
+  }
+&lt;/style&gt;
+&lt;body&gt;
+&lt;h1&gt;Hello world!&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h2&gt;Image in template&lt;/h2&gt;
+
+&lt;img src=&quot;./images/html5.png&quot; /&gt;
+
+&lt;hr /&gt;
+  
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h2>partials/body.html</h2>
+<pre>
+&lt;h2&gt;Image in partial&lt;/h2&gt;
+
+&lt;img src=&quot;../images/webpack.png&quot; /&gt;
+
+&lt;hr /&gt;
+
+...and the rest of this configuration example
 </pre>

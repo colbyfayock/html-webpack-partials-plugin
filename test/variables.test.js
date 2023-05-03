@@ -12,7 +12,8 @@ describe('Variables', function() {
 
       expect(error).to.equal(null);
 
-      const html = result.compilation.assets['index.html'].source();
+      //const html = result.compilation.assets['index.html'].source();
+      const html = fs.readFileSync(path.resolve(__dirname, '../examples/variables/dist/index.html')).toString();
       const fixture = fs.readFileSync(path.resolve(__dirname, 'fixtures/variables.html')).toString();
 
       expect(html).to.equal(fixture);
